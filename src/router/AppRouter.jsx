@@ -1,10 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import { JournalPage } from "../journal";
+import { PrivateRoutes } from "./PrivateRoutes";
+import { PublicRoutes } from "./PublicRoutes";
 
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route path="/" element={<JournalPage/>} />
+      <Route path="*" element={<PublicRoutes/>} />
+      <Route path="*" element={<PrivateRoutes/>} />
     </Routes>
   );
 };
